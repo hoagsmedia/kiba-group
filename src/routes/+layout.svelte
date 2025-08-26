@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { Toaster } from '$lib/components/ui/sonner/index.js';
+
 	import '../app.css';
 	import favicon from '$lib/assets/logo.svg';
 	import logo from '$lib/assets/logo.svg';
@@ -25,6 +27,7 @@
 	<link rel="icon" href={favicon} />
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
 </svelte:head>
+<Toaster />
 
 <a
 	href="#main"
