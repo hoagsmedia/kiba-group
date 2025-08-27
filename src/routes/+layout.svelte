@@ -1,10 +1,15 @@
 <script lang="ts">
 	import { Toaster } from '$lib/components/ui/sonner/index.js';
-
+	import { dev } from '$app/environment';
+	import { injectAnalytics } from '@vercel/analytics/sveltekit';
 	import '../app.css';
 	import favicon from '$lib/assets/logo.svg';
 	import logo from '$lib/assets/logo.svg';
+
 	let { children } = $props();
+
+	injectAnalytics({ mode: dev ? 'development' : 'production' });
+
 	const nav = [
 		{ href: '/', label: 'Home' },
 		{ href: '/#what-we-do', label: 'Capabilities' },
