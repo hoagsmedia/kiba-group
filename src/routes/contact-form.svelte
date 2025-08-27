@@ -7,11 +7,12 @@
 	import { contactSchema, type ContactSchema } from './contact-schema';
 	import { type SuperValidated, type Infer, superForm } from 'sveltekit-superforms';
 	import { zodClient } from 'sveltekit-superforms/adapters';
+	import type { O } from 'vitest/dist/chunks/reporters.d.BFLkQcL6.js';
 
 	let { data }: { data: { form: SuperValidated<Infer<ContactSchema>> } } = $props();
 
 	const form = superForm(data.form, {
-		validators: zodClient(contactSchema),
+		validators: zodClient(contactSchema as any),
 		SPA: true,
 		onUpdate: ({ form: f }) => {
 			if (f.valid) {
